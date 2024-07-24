@@ -11,7 +11,7 @@ kafka:
     value.serializer: ${PRODUCER_VALUE_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
     acks: ${PRODUCER_ACKS_CONFIG:all}
   consumer:
-    group.id: ${CONSUMER_GROUP_ID}
+    group.id: ${CONSUMER_GROUP_ID:kafka-utility-test-group}
     max.poll.records: ${CONSUMER_MAX_POLL_RECORDS:1000}
     auto.offset.reset: ${CONSUMER_AUTO_OFFSET_RESET:latest}
     enable.auto.commit: ${CONSUMER_ENABLE_AUTO_COMMIT:false}

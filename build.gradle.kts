@@ -13,7 +13,6 @@ val springBootStarterVersion: String by project
 val springKafkaVersion: String by project
 val lombokVersion: String by project
 val jacksonDatabindVersion: String by project
-val kafkaTestContainersVersion: String by project
 
 group = projectGroup
 version = projectVersion
@@ -38,7 +37,6 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootStarterVersion")
 	testImplementation("org.springframework.kafka:spring-kafka-test:$springKafkaVersion")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-	testImplementation("org.testcontainers:kafka:$kafkaTestContainersVersion")
 
 }
 
