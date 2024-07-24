@@ -1,0 +1,30 @@
+spring:
+  application:
+  name: "kafka-utility"
+
+kafka:
+  broker:
+    list: ${BOOTSTRAP_SERVERS:localhost:9092}
+  producer:
+    client.id: ${PRODUCER_CLIENT_ID_CONFIG:Kafka-Utility}
+    key.serializer: org.apache.kafka.common.serialization.StringSerializer
+    value.serializer: ${PRODUCER_VALUE_SERIALIZER:org.apache.kafka.common.serialization.StringSerializer}
+    acks: ${PRODUCER_ACKS_CONFIG:all}
+  consumer:
+    group.id: ${CONSUMER_GROUP_ID}
+    max.poll.records: ${CONSUMER_MAX_POLL_RECORDS:1000}
+    auto.offset.reset: ${CONSUMER_AUTO_OFFSET_RESET:latest}
+    enable.auto.commit: ${CONSUMER_ENABLE_AUTO_COMMIT:false}
+    auto.commit.interval.ms: ${CONSUMER_AUTO_COMMIT_INTERVAL:60000}
+    default.threads: ${CONSUMER_DEFAULT_THREADS:1}
+    key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value.deserializer: ${CONSUMER_VALUE_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+    fetch.min.bytes: ${CONSUMER_FETCH_MIN_BYTES:100000000}
+    fetch.max.wait.ms: ${CONSUMER_FETCH_MAX_WAIT:30000}
+    session.timeout.ms: ${CONSUMER_SESSION_TIMEOUT:60000}
+    group.max.session.timeout.ms: ${CONSUMER_GROUP_MAX_SESSION_TIMEOUT:60000}
+    request.timeout.ms: ${CONSUMER_REQUEST_TIMEOUT:80000}
+    heartbeat.interval.ms: ${CONSUMER_HEARTBEAT_INTERVAL:10000}
+    fixed.backoff.interval: ${CONSUMER_FIXED_BACKOFF_INTERVAL:1000}
+    max.backoff.attempts: ${CONSUMER_MAX_BACKOFF_ATTEMPTS:10}
+
